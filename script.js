@@ -1,3 +1,4 @@
+// 검색이벤트함수 //
 const handleSearch = () => {
     const input = document.getElementById("searchInput").value.trim();
   
@@ -14,3 +15,66 @@ const handleSearch = () => {
     }
   };
   
+  //상품상세보기 이벤트 함수//
+  const viewItem = () => {
+    gtag("event", "view_item", {
+      category: "IT",
+      labels : "promotion_item",
+      items : [
+        {
+            item_id: "EP1001",
+            item_name: "무선 이어폰",
+            currency: "KRW",
+            price: "129000",
+            quantity: "1",
+        },
+      ],  
+    });
+    alert("view_item 이벤트 발생!")
+  };
+
+  //장바구니 이벤트 함수//
+  const addToCart = () => {
+    gtag("event", "addToCart", {
+      category: "IT",
+      labels: "promotion_item",
+      currency: "KRW",
+      value: 129000,
+      items: [
+        {
+          item_id: "EP1001",
+          item_name: "무선 이어폰",
+          currency: "KRW",
+          price: "129000",
+          quantity: "1",
+        },
+      ],
+    });
+  
+    alert("addToCart 이벤트 발생!");
+  };
+  
+
+
+  //상품 구매하기 이벤트 함수 //
+  const purchase = () => {
+    gtag("event", "purchase", {
+        transection_id : "T1234",
+        affliation: "온라인몰",
+        category: "IT",
+        labels: "promotion_item",
+        currency: "KRW",
+        value: 129000,
+        items: [
+          {
+            item_id: "EP1001",
+            item_name: "무선 이어폰",
+            currency: "KRW",
+            price: "129000",
+            quantity: "1",
+          },
+        ],
+      });
+    
+      alert("purchase 이벤트 발생!");
+  };
